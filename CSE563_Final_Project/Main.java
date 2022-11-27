@@ -34,13 +34,10 @@ class Main{
         JMenuBar menuBarMain = new JMenuBar();
         menuMain.setJMenuBar(menuBarMain);
 
-        menuBarMain.add(new File());
+        //menuBarMain.add(new File());
 
         JMenu optionAbout = new JMenu();
         menuBarMain.add(new About(optionAbout));
-
-        // JMenuItem menuItemLoadRoster = new JMenuItem("Load Roster");
-        // optionFile.add(menuItemLoadRoster);
 
         // JMenuItem menuItemAddAttendance = new JMenuItem("Add Attendance");
         // optionFile.add(menuItemAddAttendance);

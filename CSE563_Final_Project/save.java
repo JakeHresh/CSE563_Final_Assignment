@@ -15,27 +15,27 @@ public class save extends JFrame{
      * @param table Data table from Table class to read and save from
      */
     save(String fileName, Table table) {
-        FileWriter writer = null;
+        FileWriter file_writer = null;
 
         try {
             // create the writer with the filename mentioned
-            writer = new FileWriter(fileName);
+            file_writer = new FileWriter(fileName);
 
             // store the column headers int he csv file (getting columns count and columns name from the Table class)
             for ( int i = 0; i < table.getColumnCount(); i++){
-                writer.write(table.getColumnName(i) + ",");
+                file_writer.write(table.getColumnName(i) + ",");
             }
-            writer.write("\n");
+            file_writer.write("\n");
 
             // goes through each entry (columns and rows count taken from Table class) and stored the data in the file one by one
-            for(int i = 0; i < table.getColumnCount(); i++){
+            for(int i = 0; i < table.getRowCount(); i++){
                 for(int j = 0; j < table.getColumnCount(); j++){
-                    writer.write(table.getValueAt(i, j).toString() + ",");
+                    file_writer.write(table.getValueAt(i, j).toString() + ",");
                 }
-                writer.write("\n");
+                file_writer.write("\n");
             }
             //  close the file after writing all the data
-            writer.close();
+            file_writer.close();
 
         } catch (IOException e) {
             e.printStackTrace();

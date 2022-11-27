@@ -3,7 +3,7 @@ package CSE563_Final_Project;
 import javax.swing.*;
 import java.awt.*;
 
-public class MainFrame {
+public class MainFrame extends JFrame {
     private JFrame frame;
     private JPanel panel;
 
@@ -30,7 +30,7 @@ public class MainFrame {
         JMenuBar menuBarMain = new JMenuBar();
         frame.setJMenuBar(menuBarMain);
 
-        menuBarMain.add(new File());
+        menuBarMain.add(new File(this));
 
         JMenu optionAbout = new JMenu();
         menuBarMain.add(new About(optionAbout));
