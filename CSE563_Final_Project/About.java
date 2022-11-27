@@ -19,6 +19,7 @@ import javax.swing.event.MenuListener;
  * About class displays the menu displaying the team members information
  */
 public class About extends JMenu {
+	// parent menu is the parent menu option for the About class
 	private Component parent_menu;
 	private JMenu menu;
 
