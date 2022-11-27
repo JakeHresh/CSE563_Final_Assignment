@@ -19,13 +19,13 @@ import javax.swing.event.MenuListener;
  * About class displays the menu displaying the team members information
  */
 public class About extends JMenu {
-	private Component parent;
+	private Component parent_menu;
 	private JMenu menu;
 
-	public About(Component parent) {
+	public About(Component parent_menu) {
 		super("About");
 
-		this.parent = parent;
+		this.parent_menu = parent_menu;
 		this.menu = this;
 
 		/**
@@ -40,14 +40,14 @@ public class About extends JMenu {
 			public void menuSelected(MenuEvent arg0) {
 				// Display pop up
 				JOptionPane.showMessageDialog(
-						parent,
+					parent_menu,
 						"Team Members:\n" +
 								"Simran Bhalla - ssbhalla@asu.edu\n" +
-								"Member 2 - member2@asu.edu\n" +
-								"Member 3 - member3@asu.edu\n" +
-								"Member 4 - member4@asu.edu\n" +
-								"Member 5 - member5@asu.edu\n" +
-								"Member 6 - member6@asu.edu",
+								"Omkar Pisal - opisal@asu.edu\n" +
+								"Haritej Lakshami Narayan - hlakshm2@asu.edu\n" +
+								"Jacob Hreshchyshyn  - jhreshch@asu.edu\n" +
+								"London Fisher - Lcfish2@asu.edu\n" +
+								"Preetham Akunuri - pakunur1@asu.edu",
 						"About",
 						JOptionPane.PLAIN_MESSAGE);
 
