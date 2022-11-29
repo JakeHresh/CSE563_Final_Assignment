@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.io.FilenameFilter;
 
 public class File extends JMenu {
 
@@ -30,6 +33,7 @@ public class File extends JMenu {
 		// Adding save and loadRoster buttons to the File Menu, other butthons and their functions can be added here
 		add(getLoadRoster());
 		add(getSaveButton());
+		add(getAddAttendance());
 	}
 
 	/**
@@ -117,6 +121,72 @@ public class File extends JMenu {
 		});
 		
 		return save;
+	}
+
+
+	/*
+	 * Creates menu item "AddAttendance" and assigns an action to the item
+	 */
+	private JMenuItem getAddAttendance() {
+		JMenuItem addAttendance = new JMenuItem("Add Attendance");
+		
+		addAttendance.addActionListener(new ActionListener() {
+
+			/**
+			 * Listens for the "Add Attendance" button pressed event and takes the following actions:
+			 * 1- Asks file directory from the user using the JFileChooser
+			 * 2- Grabs the files in the directory filtered according to ^[0-9]{8} attendance.csv$
+			 * 3- Sorts the attendance files by Date before parsing the attendance files
+			 * 
+			 * @param arg0 The action event of button
+			 */
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+				// do nothing if no roster is loaded yet
+				if(table == null) {
+					return;
+				}
+
+				// Have user pick directory via JFileChooser
+				JFileChooser file_chooser = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+				file_chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+				int dialogbox = file_chooser.showDialog(null, "Select Attendance Directory");
+				if (dialogbox == JFileChooser.APPROVE_OPTION)
+				{
+					//Filter the files in the directory according to our attendance file format
+					FilenameFilter filter = (directory,name) -> name.matches("^[0-9]{8} attendance.csv$");
+					java.io.File[] attendanceFiles = file_chooser.getSelectedFile().listFiles(filter);
+
+					//Sort attendance files by date
+					Arrays.sort(attendanceFiles, new Comparator<java.io.File>(){
+						@Override
+						public int compare(java.io.File f1, java.io.File f2){
+							int date1 = Integer.parseInt(f1.getName().substring(0,8));
+							int date2 = Integer.parseInt(f2.getName().substring(0,8));
+							return date1-date2;
+						}
+					});
+
+					
+
+					//Add a column for each file
+					for(java.io.File attendanceFile : attendanceFiles){
+						String fileName = attendanceFile.getName();
+						int date = Integer.parseInt(fileName.substring(0,8));
+						int column = table.model.getColumnCount();
+						table.model.addColumn(date);
+						//Init column values to 0
+						for(int i = 0; i<table.model.getRowCount(); i++){
+							table.model.setValueAt(0, i, column);
+						}
+						loadAttendance.parseAttendanceFile(attendanceFile.getAbsolutePath(), table.model, column);
+					}
+				}
+			}
+		});
+		
+		return addAttendance;
 	}
     
 }
