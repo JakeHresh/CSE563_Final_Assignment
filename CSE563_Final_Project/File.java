@@ -173,8 +173,8 @@ public class File extends JMenu {
 					//Add a column for each file
 					for(java.io.File attendanceFile : attendanceFiles){
 						String fileName = attendanceFile.getName();
-						int date = Integer.parseInt(fileName.substring(0,8));
 						int column = table.model.getColumnCount();
+						String date = fileName.substring(4,6)+"/"+fileName.substring(6,8)+"/"+fileName.substring(2,4);
 						table.model.addColumn(date);
 						//Init column values to 0
 						for(int i = 0; i<table.model.getRowCount(); i++){
