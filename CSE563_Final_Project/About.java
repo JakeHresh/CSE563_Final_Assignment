@@ -47,7 +47,7 @@ public class About extends JMenu {
 								"Omkar Pisal - opisal@asu.edu\n" +
 								"Haritej Lakshami Narayan - hlakshm2@asu.edu\n" +
 								"Jacob Hreshchyshyn  - jhreshch@asu.edu\n" +
-								"London Fisher - Lcfish2@asu.edu\n" +
+								"London Fischer - Lcfisch2@asu.edu\n" +
 								"Preetham Akunuri - pakunur1@asu.edu",
 						"About",
 						JOptionPane.PLAIN_MESSAGE);
