@@ -1,3 +1,4 @@
+package CSE563_Final_Project;
 // Copyright 2022 CSE563 Team
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,22 +34,18 @@ class Main{
         JMenuBar menuBarMain = new JMenuBar();
         menuMain.setJMenuBar(menuBarMain);
 
-        JMenu optionFile = new JMenu("File");
-        menuBarMain.add(optionFile);
+        //menuBarMain.add(new File());
 
-        JMenu optionAbout = new JMenu("About");
-        menuBarMain.add(optionAbout);
+        JMenu optionAbout = new JMenu();
+        menuBarMain.add(new About(optionAbout));
 
-        JMenuItem menuItemLoadRoster = new JMenuItem("Load Roster");
-        optionFile.add(menuItemLoadRoster);
+        // JMenuItem menuItemAddAttendance = new JMenuItem("Add Attendance");
+        // optionFile.add(menuItemAddAttendance);
 
-        JMenuItem menuItemAddAttendance = new JMenuItem("Add Attendance");
-        optionFile.add(menuItemAddAttendance);
+        // JMenuItem menuItemSave = new JMenuItem("Save");
+        // optionFile.add(menuItemSave);
 
-        JMenuItem menuItemSave = new JMenuItem("Save");
-        optionFile.add(menuItemSave);
-
-        JMenuItem menuItemPlotData = new JMenuItem("Plot Data");
-        optionFile.add(menuItemPlotData);
+        // JMenuItem menuItemPlotData = new JMenuItem("Plot Data");
+        // optionFile.add(menuItemPlotData);
     }
 }
