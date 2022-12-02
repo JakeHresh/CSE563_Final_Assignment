@@ -50,5 +50,14 @@ public class Table extends JTable{
         main_frame.setSize(640,600); 
         main_frame.setVisible(true);
     }
+    
+    // this method gets the total number of attendees in the class on particular date(column))
+    public int[] getAttendance(int column){
+        int[] attendees = new int[model.getRowCount()];
+        for(int i = 0; i < model.getRowCount(); i++){
+            attendees[i] = (int)model.getValueAt(i, column);
+        }
+        return attendees;
+    }
 }
 
