@@ -160,7 +160,7 @@ public class File extends JMenu {
 				if (dialogbox == JFileChooser.APPROVE_OPTION)
 				{
 					//Filter the files in the directory according to our attendance file format
-					FilenameFilter filter = (directory,name) -> name.matches("^[0-9]{8} attendance.csv$");
+					FilenameFilter filter = (directory,name) -> name.matches("^[0-9]{8}[ _]attendance.csv$");
 					java.io.File[] attendanceFiles = file_chooser.getSelectedFile().listFiles(filter);
 
 					//Sort attendance files by date
