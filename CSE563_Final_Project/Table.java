@@ -3,7 +3,7 @@ package CSE563_Final_Project;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * Table class creates a JTable with attendance array returned from AttendanceAdder class and adds attendance.
@@ -11,16 +11,16 @@ import java.util.ArrayList;
  */
 public class Table extends JTable{
     DefaultTableModel model = new DefaultTableModel();
-    MainFrame window;
+    MainFrame main_frame;
     
     /**
      * Constructor for table. Creates a table with the inputted array list and displays on the given GUI window. 
      * @param roster - ArrayList<student> containing student information to be inputted into the table. 
-     * @param window - GUI instance where the table is to be displayed. 
+     * @param main_frame - GUI instance where the table is to be displayed. 
      */
-    Table(ArrayList<Student> roster, MainFrame window){
+    Table(LinkedList<Student> roster, MainFrame main_frame){
         
-        this.window = window;
+        this.main_frame = main_frame;
         // header for the table 
         String columns[] = {"ID", "First Name", "Last Name", "ASURITE"};  
 
@@ -46,9 +46,9 @@ public class Table extends JTable{
         // add scroll panel
         JScrollPane scroll_panel = new JScrollPane(this);
         scroll_panel.setPreferredSize(new Dimension(400,600));  // dimentions of the table 
-        window.add(scroll_panel, BorderLayout.CENTER);
-        window.setSize(640,600); 
-        window.setVisible(true);
+        main_frame.add(scroll_panel, BorderLayout.CENTER);
+        main_frame.setSize(640,600); 
+        main_frame.setVisible(true);
     }
 }
 
