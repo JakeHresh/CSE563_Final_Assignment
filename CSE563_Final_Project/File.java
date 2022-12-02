@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileWriter;
-import java.util.ArrayList;
+import java.util.*;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
@@ -21,14 +21,14 @@ public class File extends JMenu {
     // used redundant table for now, it will be used when the Table class is updated
     private Table table;
 
-	private MainFrame window;
+	private MainFrame main_frame;
 
     /**
 	 * Constructor that adds buttons to the File JMenu
 	 */
-	public File(MainFrame window){
+	public File(MainFrame main_frame){
 		super("File");
-		this.window = window;
+		this.main_frame = main_frame;
 
 		// Adding save and loadRoster buttons to the File Menu, other butthons and their functions can be added here
 		add(getLoadRoster());
@@ -72,7 +72,7 @@ public class File extends JMenu {
 					loadRoster roster = new loadRoster();
 
 					// Save the data of the file to a JTable global instance table 
-					table = new Table(roster.loadData(fileName), window);
+					table = new Table(roster.loadData(fileName), main_frame);
 				}
 
 				// If the user cancelled the operation
