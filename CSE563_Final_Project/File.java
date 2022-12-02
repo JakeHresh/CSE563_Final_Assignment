@@ -32,8 +32,9 @@ public class File extends JMenu {
 
 		// Adding save and loadRoster buttons to the File Menu, other butthons and their functions can be added here
 		add(getLoadRoster());
-		add(getSaveButton());
 		add(getAddAttendance());
+		add(getSaveButton());
+		add(getPlotDataButton());
 	}
 
 	/**
@@ -193,5 +194,52 @@ public class File extends JMenu {
 		
 		return addAttendance;
 	}
-    
+	
+	private JMenuItem getPlotDataButton() {
+		JMenuItem plotData = new JMenuItem("Plot Data");
+
+		plotData.addActionListener(new ActionListener() {
+
+			/**
+			 * Looks for action performed i.e. "Plot Data" button pressed. When selected, using the information
+			 * stored in global variable "table", data points are plotted on a graph and presented in a pop up
+			 * frame. 
+			 * 
+			 * @param arg0 The action event of button
+			 */
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+
+				// If there is no table loaded yet throw an ERROR
+				if(table == null){
+					JOptionPane.showMessageDialog(
+						window,
+						"Please load a file.",
+						"ERROR",
+						JOptionPane.PLAIN_MESSAGE);
+				}
+				else if(table.getColumnCount() == 4){
+					JOptionPane.showMessageDialog(
+							window,
+							"No attendance data added. Please add attendance then try again.",
+							"ERROR",
+							JOptionPane.PLAIN_MESSAGE);
+				}
+				else{
+					// Plots the data from loaded table in a new JFrame
+			        JFrame frame = new JFrame("Bar Plot");
+			        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			        frame.setSize(600, 420);
+			        frame.setLocationRelativeTo(null);
+			        frame.add(new BarGraphApp(table));
+			        frame.setVisible(true);
+					
+
+				}
+			}
+		});
+		
+		return plotData;
+	}
+	  
 }
