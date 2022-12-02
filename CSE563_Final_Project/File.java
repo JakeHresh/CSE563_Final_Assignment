@@ -145,6 +145,11 @@ public class File extends JMenu {
 				
 				// do nothing if no roster is loaded yet
 				if(table == null) {
+					JOptionPane.showMessageDialog(
+							window,
+							"File not loaded!",
+							"Warning",
+							JOptionPane.PLAIN_MESSAGE);
 					return;
 				}
 

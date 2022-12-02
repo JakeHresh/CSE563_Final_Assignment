@@ -1,8 +1,10 @@
 package CSE563_Final_Project;
 
+import java.awt.*;
 import java.io.*;
 import java.io.File;
 import java.io.FileReader;
+import javax.swing.*;
 import javax.swing.table.TableModel;
 
 /**
@@ -48,7 +50,15 @@ public class loadAttendance {
                 }
                 //if the id is not found in roster, inform user (NYI)
                 if(!foundID){
-                    System.out.println("User " + id + " who attended for " + time + " minutes is not a part of the roster!");
+                    String date = fileFd.getName().replaceAll("[a-zA-Z.\\s+]","");
+                    date = date.substring(4,6) + "/" + date.substring(6,8);
+//                    System.out.println("User " + id + " who attended for " + time + " minutes is not a part of the roster!");
+                    Component window = null;
+                    JOptionPane.showMessageDialog(
+                            window,
+                            "Additional User " + id +" connected for "+ time +" minutes on "+ date +" date.",
+                            "Information",
+                            JOptionPane.PLAIN_MESSAGE);
                 }
             }
 
