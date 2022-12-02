@@ -213,14 +213,14 @@ public class File extends JMenu {
 				// If there is no table loaded yet throw an ERROR
 				if(table == null){
 					JOptionPane.showMessageDialog(
-						window,
+						main_frame,
 						"Please load a file.",
 						"ERROR",
 						JOptionPane.PLAIN_MESSAGE);
 				}
 				else if(table.getColumnCount() == 4){
 					JOptionPane.showMessageDialog(
-							window,
+							main_frame,
 							"No attendance data added. Please add attendance then try again.",
 							"ERROR",
 							JOptionPane.PLAIN_MESSAGE);
