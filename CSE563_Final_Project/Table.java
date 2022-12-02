@@ -22,22 +22,20 @@ public class Table extends JTable{
         
         this.window = window;
         // header for the table 
-        String columns[] = {"ID", "First Name", "Last Name", "Program and Plan", "Academic Level", "ASURITE"};  
+        String columns[] = {"ID", "First Name", "Last Name", "ASURITE"};  
 
         // add column headers
-        for (int i = 0; i < 6; i ++){
+        for (int i = 0; i < 4; i ++){
             model.addColumn(columns[i]);
         }
 
         // make object to store the rows
-        Object rows[] = new Object[6];
+        Object rows[] = new Object[4];
         for (int i = 0; i < roster.size(); i++){
             rows[0] = roster.get(i).get_studentID();
             rows[1] = roster.get(i).get_fName();
             rows[2] = roster.get(i).get_lName();
-            rows[3] = roster.get(i).get_program();
-            rows[4] = roster.get(i).get_academyLevel();
-            rows[5] = roster.get(i).get_asuriteID();
+            rows[3] = roster.get(i).get_asuriteID();
             model.addRow(rows);
         }
 

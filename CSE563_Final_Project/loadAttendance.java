@@ -24,7 +24,7 @@ public class loadAttendance {
     public static void parseAttendanceFile(String csvFile, TableModel model, int columnIndex) {
         
         String line = "";
-        int idColumn = 5;
+        int idColumn = 3;
 
         try {
             // reading the file 

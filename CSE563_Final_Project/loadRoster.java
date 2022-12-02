@@ -42,9 +42,7 @@ public class loadRoster {
                 new_student.set_studentID(Integer.parseInt(temp_array[0]));
                 new_student.set_fName(temp_array[1]);
                 new_student.set_lName(temp_array[2]);
-                new_student.set_program(temp_array[3]);
-                new_student.set_academicLevel(temp_array[4]);
-                new_student.set_asuriteID(temp_array[5]);
+                new_student.set_asuriteID(temp_array[3]);
 
                 // add the student to the array list if not already added
                 if (!arraylist.stream().anyMatch(x -> x.get_studentID() == new_student.get_studentID() || x.get_asuriteID().equals(new_student.get_asuriteID()))) {
