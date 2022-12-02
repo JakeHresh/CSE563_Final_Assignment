@@ -28,8 +28,6 @@ public class Student{
   	private int studentID;
     private String fName;
     private String lName;
-    private String program;
-    private String academicLevel;
     private String asuriteID;
 
     /**
@@ -39,8 +37,6 @@ public class Student{
         studentID = 0;
         fName = null;
         lName = null;
-        program = null;
-        academicLevel = null;
         asuriteID = null;
     }
 
@@ -51,8 +47,6 @@ public class Student{
         studentID = ID;
         fName = firstName;
         lName = lastName;
-        program = prog;
-        academicLevel = acdLevel;
         asuriteID = asuID;
     }
 
@@ -84,24 +78,6 @@ public class Student{
     }
 
     /**
-     * setter for academic program
-     * 
-     * @param String 
-     */
-    public void set_program(String acdProgram) {
-        this.program = acdProgram;
-    }
-
-    /**
-     * setter for academic level
-     * 
-     * @param String Academic Level
-     */
-    public void set_academicLevel(String acdLevel) {
-        this.academicLevel = acdLevel;
-    }
-
-    /**
      * setter for Asurite ID
      * 
      * @param String ASURITE
@@ -129,20 +105,6 @@ public class Student{
      */
     public String get_lName() {
         return lName;
-    }
-
-    /**
-     * getter for program plan
-     */
-    public String get_program() {
-        return program;
-    }
-
-    /**
-     * getter for academic level
-     */
-    public String get_academyLevel() {
-        return academicLevel;
     }
 
     /**
