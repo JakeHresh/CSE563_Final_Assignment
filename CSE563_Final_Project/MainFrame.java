@@ -19,7 +19,7 @@ public class MainFrame extends JFrame {
         panel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 5));
 
         frame.setLayout(new BorderLayout());
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 500);
         frame.setLocationRelativeTo(null);
 
