@@ -1,3 +1,7 @@
+/** This file is responsible to handel loading the roster file in the menu
+ * @author CSE563 Team
+ * @version 1.0
+*/
 package CSE563_Final_Project;
 
 import java.io.*;
@@ -17,8 +21,9 @@ public class loadRoster {
      * @param csvFile : name of the file
      * @return : LinkedList contains all the students and their data
      */
-    public static LinkedList<Student> loadData(String csvFile) {
+    public LinkedList<Student> loadData(String csvFile) {
         
+        // link_list is to store the dtaa and the line variable is to read line by line
         LinkedList<Student> link_list = new LinkedList<Student>();
         String line = "";
 

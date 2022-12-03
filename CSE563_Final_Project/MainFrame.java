@@ -1,16 +1,30 @@
+/** This file is responsible to handel Main window shown
+ * @author CSE563 Team
+ * @version 1.0
+*/
 package CSE563_Final_Project;
 
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Main frame extends the JFrame class 
+ */
 public class MainFrame extends JFrame {
+    // frmae and panel used
     private JFrame frame;
     private JPanel panel;
 
+    /**
+     * constructor
+     */
     public MainFrame() {
         initialize();
     }
 
+    /**
+     * initialization takes place here
+     */
     private void initialize() {
 
         frame = new JFrame();

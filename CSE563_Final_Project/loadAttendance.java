@@ -1,3 +1,7 @@
+/** This file is responsible to handel additional attendance files
+ * @author CSE563 Team
+ * @version 1.0
+*/
 package CSE563_Final_Project;
 
 import java.awt.*;
@@ -10,7 +14,6 @@ import javax.swing.table.TableModel;
 /**
  * loadAttendance parses an attendance file and updates the table accordingly
  */
-
 public class loadAttendance {
     // comma delimiter is used to parse csv file
     public static final String delimiter = ",";
@@ -23,6 +26,7 @@ public class loadAttendance {
      */
     public static void parseAttendanceFile(String csvFile, TableModel model, int columnIndex) {
         
+        // line to read the file data line by line 
         String line = "";
         int idColumn = 3;
 
