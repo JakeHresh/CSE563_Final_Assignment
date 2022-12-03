@@ -19,7 +19,7 @@ public class loadAttendance {
      * this method parses an attendance csv file and updates the table accordingly
      * @param csvFile : name of the file
      * @param model : table's data model
-     * @param column : table's data model
+     * @param columnIndex : table's data model
      */
     public static void parseAttendanceFile(String csvFile, TableModel model, int columnIndex) {
         

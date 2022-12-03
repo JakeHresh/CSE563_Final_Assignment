@@ -42,8 +42,12 @@ public class Student{
 
     /**
      * initialization of the Student data to specific values
+	 * @param ID - integer ID for the student
+	 * @param firstName - first name of the student in string
+	 * @param lastName - last name of the student in string
+	 * @param asuID - asurite id of the student in string
      */
-    public Student(int ID, String firstName, String lastName, String prog, String acdLevel, String asuID) {
+    public Student(int ID, String firstName, String lastName, String asuID) {
         studentID = ID;
         fName = firstName;
         lName = lastName;
@@ -53,7 +57,7 @@ public class Student{
     /**
      * setter for studentID
      * 
-     * @param int ID
+     * @param id - set student id
      */
     public void set_studentID(int id) {
         this.studentID = id;
@@ -62,7 +66,7 @@ public class Student{
     /**
      * setter for fName
      * 
-     * @param String First Name
+     * @param firstName - first name update
      */
     public void set_fName(String firstName) {
         this.fName = firstName;
@@ -71,7 +75,7 @@ public class Student{
     /**
      *setter for lName
      * 
-     * @param String lastName
+     * @param lastName - last name update
      */
     public void set_lName(String lastName) {
         this.lName = lastName;
@@ -80,7 +84,7 @@ public class Student{
     /**
      * setter for Asurite ID
      * 
-     * @param String ASURITE
+     * @param asuID - asurite ID update
      */
     public void set_asuriteID(String asuID) {
         this.asuriteID = asuID;
@@ -88,6 +92,7 @@ public class Student{
 
     /**
      * getter for studentID
+	 * @return int
      */
     public int get_studentID() {
         return studentID;
@@ -95,6 +100,7 @@ public class Student{
 
     /**
      * getter for first name
+	 * @return String
      */
     public String get_fName() {
         return fName;
@@ -102,6 +108,7 @@ public class Student{
 
     /**
      * getter for last name
+	 * @return String
      */
     public String get_lName() {
         return lName;
@@ -109,6 +116,7 @@ public class Student{
 
     /**
      * getter for Asurite ID
+	 * @return String
      */
     public String get_asuriteID() {
         return asuriteID;
