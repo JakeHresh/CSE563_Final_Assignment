@@ -18,12 +18,18 @@ import javax.swing.event.MenuListener;
 /**
  * About class displays the menu displaying the team members information
  */
-public class About extends JMenu {
+public class About extends JMenu 
+{
 	// parent menu is the parent menu option for the About class
 	private Component parent_menu;
 	private JMenu menu;
 
-	public About(Component parent_menu) {
+	/**
+	 * Constructor class for the about menu
+	 * @param parent_menu - the parent menu where this menu is given
+	 */
+	public About(Component parent_menu) 
+	{
 		super("About");
 
 		this.parent_menu = parent_menu;
@@ -31,15 +37,19 @@ public class About extends JMenu {
 
 		/**
 		 * When the About Button is clicked then this function will be called
+		 * @param MenuListener - this is called whenever the menu is clicked on
 		 */
-		addMenuListener(new MenuListener() {
+		addMenuListener(new MenuListener() 
+		{
+			
 			/**
 			 * Action performed when the menu is selected
 			 * @param arg0 - Action used to interact with menu class
 			 */
 			@Override
-			public void menuSelected(MenuEvent arg0) {
-				// Display pop up
+			public void menuSelected(MenuEvent arg0) 
+			{
+				// Message dialog is popped up as a result of clicking on menu, it displays the team members' information
 				JOptionPane.showMessageDialog(
 					parent_menu,
 						"Team Members:\n" +

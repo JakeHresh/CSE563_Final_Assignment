@@ -1,3 +1,7 @@
+/** This function makes the BarGraph class which is responsible to display data grapph
+ * @author CSE563 Team
+ * @version 1.0
+*/
 
 package CSE563_Final_Project;
 
@@ -7,17 +11,23 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.lang.String;
 
-
+/**
+ * BarGraph class is used to display the data in form of the graph
+ */
 public class BarGraph {
 
+    // model instance of the bar graph
     protected BarGraphModel model;
     
     protected static final Font BAR_TITLE_FONT = new Font("Calibri", Font.PLAIN, 12);
     
+    /**
+    * BarGraph class is used to display the data in form of the graph
+    * @param table - takes the input from the Table class that has all the stored data in it
+    */
     public BarGraph(Table table) {
     	
         this.model = new BarGraphModel();
-        
 
         model.setLocation(50, 50);				// Setting location of the border line of bar plot
         model.setSize(1000, 300);				// Setting Size of the border line of bar plot
@@ -47,19 +57,35 @@ public class BarGraph {
     
     }
     
+    /**
+     * returns the model of the BarGraph
+     * @return BarGraphModel
+     */
     public BarGraphModel getModel() {
         return model;
     }
 
+    /**
+     * updates the bar graph model
+     * @param model - set the model of this bar graph
+     */
     public void setModel(BarGraphModel model) {
         this.model = model;
     }
     
+    /**
+     * draw garphics 
+     * @param g - Graphics needed to be drawn
+     */
     public void draw(Graphics g){
         drawItems(g);
         drawBoarder(g);
     }
     
+    /**
+     * method to show the bar graph on the screen
+     * @param g - Graphics to show
+     */
     private void drawItems(Graphics g){				// this method is to display the bar graph 
         int i = 1;
         g.setFont(BAR_TITLE_FONT);
@@ -106,6 +132,10 @@ public class BarGraph {
     }
     }
     
+    /**
+     * this method is used to draw the border of the bar graph
+     * @param g - Graphics
+     */
     private void drawBoarder(Graphics g){
         g.setColor(Color.cyan);
         g.drawRoundRect(model.getX(), model.getY(), model.getSize().width, model.getSize().height, 5, 5);

@@ -1,3 +1,7 @@
+/** This file is responsible to handel File menu and all of its sub menu options
+ * @author CSE563 Team
+ * @version 1.0
+*/
 package CSE563_Final_Project;
 
 import java.awt.*;
@@ -13,8 +17,12 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.io.FilenameFilter;
 
+/**
+ * This function makes the File Menu by extending from the JMenu class
+ */
 public class File extends JMenu {
 
+	// file name variable
     private static String fileName;
     // label is used to display error messgaes
     private static JLabel label;
@@ -25,6 +33,7 @@ public class File extends JMenu {
 
     /**
 	 * Constructor that adds buttons to the File JMenu
+	 * @param main_frame - the main frame on which this menu is made
 	 */
 	public File(MainFrame main_frame){
 		super("File");
@@ -39,6 +48,7 @@ public class File extends JMenu {
 
 	/**
 	 * Create menu Item for Load Roster button and the listener called when the button is selected
+	 * @return JMenuItem
 	 */
 	private JMenuItem getLoadRoster() {
 		JMenuItem loadRoster = new JMenuItem("Load Roster");
@@ -86,6 +96,7 @@ public class File extends JMenu {
 
     /**
 	 * Creates menu item "Save" and assigns an action to the item.
+	 * @return JMenuItem
 	 */
 	private JMenuItem getSaveButton() {
 		JMenuItem save = new JMenuItem("Save");
@@ -111,7 +122,7 @@ public class File extends JMenu {
 				{
 					// save the filename in the variable and call the save class with this
 					fileName = file_chooser.getSelectedFile().getAbsolutePath();
-					save csv_file = new save(fileName, table);
+					new save(fileName, table);
 				}
 
 				// If the user cancelled the operation
@@ -195,6 +206,10 @@ public class File extends JMenu {
 		return addAttendance;
 	}
 	
+	/*
+	 * menu item to plot the data
+	 * @return JMenuItem
+	 */
 	private JMenuItem getPlotDataButton() {
 		JMenuItem plotData = new JMenuItem("Plot Data");
 
